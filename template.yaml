@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >-
+  Function will generate the MediaInfo data from the S3 Media Object.
+Resources:
+  MediaEvaluator:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_handler
+      Runtime: Python 3.6
+      CodeUri: s3://kushal-chokshi-documents/MediaEvaluator.zip
+      Description: >-
+        Function will generate the MediaInfo data from the S3 Media Object.
+      MemorySize: 512
+      Timeout: 900
